@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mydeploy
+  labels:
+    city: chennai
+spec:
+  selector:
+    matchLabels:
+     app: icici
+  replicas: 3
+  template:
+    metadata:
+     name: gomspod
+     labels:
+      app: icici
+    spec:
+     containers:
+     - name: gomscontainer
+       image: nginx
